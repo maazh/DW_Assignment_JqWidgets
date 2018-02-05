@@ -22,7 +22,11 @@
         "styles.css",
         "../node_modules/jqwidgets-scripts/jqwidgets/styles/jqx.base.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "../node_modules/jqwidgets-scripts/jqwidgets/jqxchart.core.js",
+        "../node_modules/jqwidgets-scripts/jqwidgets-ts/angular_jqxchart.ts"
+
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
