@@ -16,11 +16,14 @@ import 'rxjs/add/operator/map';
 
 
 export class AppComponent {
-    constructor(private getCollectiomsService: GetCollectiomsService) {}
+    constructor(private getCollectiomsService: GetCollectiomsService) {
+        
+    }
     addressData = [];
 
     ngOnInit() {
         this.getAddressData();
+
       }
 
     getAddressData() {

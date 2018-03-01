@@ -17,12 +17,16 @@
 </jqxChart> 
 
 
-<h1>SALESMAN</h1>
-<div *ngFor="let addressDetail of addressData">
-     <h3>Add Detail   {{addressData.addressDetail | json}} </h3>
-    {{addressDetail.SALESMAN}}
-    {{addressDetail.SAL_NAME_ID}}
-    {{addressDetail.SALESAMT}}
+  <h1>SALESMAN</h1>
+<div *ngFor="let addressDetail of addressData.data">
+        {{addressData.data[0] | json}} 
+  <br>  
+ <h4>Salesman ID:  {{addressDetail.SAL_NAME_ID}} </h4>   
+ <h4>Salesman Name:  {{addressDetail.SALESMAN}} </h4>  
+ <h4>Salesman Amount: {{addressDetail.SALESAMT}} </h4>  
+ <br>
+ 
+    
 
 </div>
 
