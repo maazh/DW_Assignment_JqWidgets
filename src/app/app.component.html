@@ -1,8 +1,28 @@
-﻿<jqxChart 
+﻿ <jqxChart 
     [width]="850" [height]="500"
     [title]="'Fitness & exercise weekly scorecard'"
     [description]="'Time spent in vigorous exercise'"
     [showLegend]="true" [enableAnimations]="true" [padding]="padding"
     [titlePadding]="titlePadding" [source]="sampleData" [xAxis]="xAxis"
     [seriesGroups]="seriesGroups" [colorScheme]="'scheme01'">
-</jqxChart>
+</jqxChart> 
+
+<jqxChart 
+[width]="850" [height]="500"
+[title]="'Fitness & exercise weekly scorecard'"
+[description]="'Time spent in vigorous exercise'"
+[showLegend]="true" [enableAnimations]="true" [padding]="padding"
+[titlePadding]="titlePadding" [source]="addressData.SALESAMT" [xAxis]="xAxis"
+[seriesGroups]="seriesGroups" [colorScheme]="'scheme01'">
+</jqxChart> 
+
+
+<h1>SALESMAN</h1>
+<div *ngFor="let addressDetail of addressData">
+     <h3>Add Detail   {{addressData.addressDetail | json}} </h3>
+    {{addressDetail.SALESMAN}}
+    {{addressDetail.SAL_NAME_ID}}
+    {{addressDetail.SALESAMT}}
+
+</div>
+

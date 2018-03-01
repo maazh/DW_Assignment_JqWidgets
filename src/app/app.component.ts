@@ -1,11 +1,35 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
+
+import { GetCollectiomsService } from './services/get-collectioms.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
 
 @Component({
     selector: 'app-root',
     templateUrl: './app.component.html',
+    providers: [GetCollectiomsService]
+
 })
 
+
 export class AppComponent {
+    constructor(private getCollectiomsService: GetCollectiomsService) {}
+    addressData = [];
+
+    ngOnInit() {
+        this.getAddressData();
+      }
+
+    getAddressData() {
+        this.getCollectiomsService.getAddressData()
+                         .subscribe(data => this.addressData = data);
+                        }
+
+
+
     sampleData: any[] = [
         { Day: 'Monday', Keith: 30, Erica: 15, George: 25 },
         { Day: 'Tuesday', Keith: 25, Erica: 25, George: 30 },
@@ -22,7 +46,7 @@ export class AppComponent {
 
     xAxis: any =
     {
-        dataField: 'Day',
+        dataField: 'addressData',
         showGridLines: true
     };
 

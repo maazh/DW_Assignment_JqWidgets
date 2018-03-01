@@ -1,15 +1,12 @@
 ﻿import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 
-// Grid 
+// Grid and chart
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
-
-// chart
 import { jqxChartComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxchart';
 
-
 import { AppComponent } from './app.component';
-
 
 
 @NgModule({
@@ -17,7 +14,8 @@ import { AppComponent } from './app.component';
       AppComponent, jqxGridComponent, jqxChartComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
