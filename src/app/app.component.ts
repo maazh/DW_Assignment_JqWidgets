@@ -27,7 +27,6 @@ export class AppComponent {
     salesmen: Sale[]; 
     ngOnInit() {
         this.getAddressData();
-        console.log("salesman 2" + JSON.stringify(this.salesmen));
 
       }
 
@@ -35,7 +34,9 @@ export class AppComponent {
         this.getCollectiomsService.getAddressData()
                          .subscribe(data => {this.addressData = data; 
                             this.salesmen = data; final = this.addressData; 
-                            console.log("final" + JSON.stringify(final.data))});
+                        //  console.log("SALESMEN" + JSON.stringify(this.salesmen))
+                        
+                        });
         
 
         }
@@ -60,8 +61,6 @@ export class AppComponent {
         showGridLines: true
     };
 
-
-
     seriesGroups2: any[] =
     [
         {
@@ -70,9 +69,9 @@ export class AppComponent {
             seriesGapPercent: 0,
             valueAxis:
             {
-                unitInterval: 10,
-                minValue: 0,
-                maxValue: 100,
+                unitInterval: 5000000,
+                minValue: 10000,
+                maxValue: 24000000,
                 displayValueAxis: true,
                 description: 'Time in minutes',
                 axisSize: 'auto',
