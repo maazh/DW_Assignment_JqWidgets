@@ -1,11 +1,4 @@
-﻿ <jqxChart 
-    [width]="850" [height]="500"
-    [title]="'Fitness & exercise weekly scorecard'"
-    [description]="'Time spent in vigorous exercise'"
-    [showLegend]="true" [enableAnimations]="true" [padding]="padding"
-    [titlePadding]="titlePadding" [source]="sampleData" [xAxis]="xAxis"
-    [seriesGroups]="seriesGroups" [colorScheme]="'scheme01'">
-</jqxChart> 
+﻿
 
 <jqxChart 
 [width]="850" [height]="500"
@@ -17,9 +10,10 @@
 </jqxChart> 
 
 
+
   <h1>SALESMAN</h1>
 <div *ngFor="let addressDetail of addressData.data">
-        {{addressData.data[0] | json}} 
+   <!--     {{addressData.data[0] | json}} -->
   <br>  
  <h4>Salesman ID:  {{addressDetail.SAL_NAME_ID}} </h4>   
  <h4>Salesman Name:  {{addressDetail.SALESMAN}} </h4>  
