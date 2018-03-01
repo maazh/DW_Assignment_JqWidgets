@@ -5,7 +5,10 @@ import { GetCollectiomsService } from './services/get-collectioms.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import { Sale } from './shared/sale';
 
+
+var final = null;
 
 @Component({
     selector: 'app-root',
@@ -19,19 +22,31 @@ export class AppComponent {
     constructor(private getCollectiomsService: GetCollectiomsService) {
         
     }
-    addressData = [];
-
+    addressData = []; 
+    saving; 
+    salesmen: Sale[]; 
     ngOnInit() {
         this.getAddressData();
+        console.log("salesman 2" + JSON.stringify(this.salesmen));
 
       }
 
     getAddressData() {
         this.getCollectiomsService.getAddressData()
-                         .subscribe(data => this.addressData = data);
-                        }
+                         .subscribe(data => {this.addressData = data; 
+                            this.salesmen = data; final = this.addressData; 
+                            console.log("final" + JSON.stringify(final.data))});
+        
 
+        }
 
+        sampleDataw: any[] = [
+            { SALESAMT: 45, SALESMAN: 'Maaz', SAL_NAME_ID: '234'},
+            { SALESAMT: 53, SALESMAN: 'Ali', SAL_NAME_ID: '33' },
+            { SALESAMT: 23, SALESMAN: 'Omer', SAL_NAME_ID: '32' }
+            
+        ];
+    
 
     sampleData: any[] = [
         { Day: 'Monday', Keith: 30, Erica: 15, George: 25 },
@@ -47,11 +62,39 @@ export class AppComponent {
 
     titlePadding: any = { left: 90, top: 0, right: 0, bottom: 10 };
 
-    xAxis: any =
+    xAxis2: any =
     {
-        dataField: 'addressData',
+        dataField: 'SALESMAN',
         showGridLines: true
     };
+
+    xAxis: any =
+    {
+        dataField: 'Day',
+        showGridLines: true
+    };
+
+    seriesGroups2: any[] =
+    [
+        {
+            type: 'column',
+            columnsGapPercent: 50,
+            seriesGapPercent: 0,
+            valueAxis:
+            {
+                unitInterval: 10,
+                minValue: 0,
+                maxValue: 100,
+                displayValueAxis: true,
+                description: 'Time in minutes',
+                axisSize: 'auto',
+                tickMarksColor: '#888888'
+            },
+            series: [
+                { dataField: 'SALESAMT', displayText: 'SALESAMT' },
+            ]
+        }
+    ];
 
     seriesGroups: any[] =
     [
