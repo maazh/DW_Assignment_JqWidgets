@@ -22,6 +22,9 @@ export class AppComponent {
     constructor(private getCollectiomsService: GetCollectiomsService) {
         
     }
+
+    // This check is used to prevent timeout error when the observable is loading 
+     check = false;
     addressData = []; 
     saving; 
     salesmen: Sale[]; 
@@ -35,7 +38,7 @@ export class AppComponent {
                          .subscribe(data => {this.addressData = data; 
                             this.salesmen = data; final = this.addressData; 
                         //  console.log("SALESMEN" + JSON.stringify(this.salesmen))
-                        
+                        this.check = true;
                         });
         
 
