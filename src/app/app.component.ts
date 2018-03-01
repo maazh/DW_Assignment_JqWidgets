@@ -43,9 +43,10 @@ export class AppComponent {
         
 
         }
-
+        
+       // "COLLECAMT": 18972561
         sampleDataw: any[] = [
-            { SALESAMT: 45, SALESMAN: 'Maaz', SAL_NAME_ID: '234'},
+            { SALESAMT: 45, SALESMAN: 'Maaz', SAL_NAME_ID: '234', COLLECAMT: '22'},
             { SALESAMT: 53, SALESMAN: 'Ali', SAL_NAME_ID: '33' },
             { SALESAMT: 23, SALESMAN: 'Omer', SAL_NAME_ID: '32' }
             
@@ -81,7 +82,8 @@ export class AppComponent {
                 tickMarksColor: '#888888'
             },
             series: [
-                { dataField: 'SALESAMT', displayText: 'SALESAMT' },
+                { dataField: 'SALESAMT', displayText: 'SALES' },
+                { dataField: 'COLLECAMT', displayText: 'COLLECTIONS' },
             ]
         }
     ];

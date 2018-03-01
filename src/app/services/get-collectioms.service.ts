@@ -12,7 +12,7 @@ export class GetCollectiomsService {
   constructor(private http: Http) { }
 
   getAddressData(){
-      return this.http.get('https://api.myjson.com/bins/143plh')
+      return this.http.get('https://api.myjson.com/bins/ph419')
              .map((res:Response) => res.json());
   }
 
