@@ -24,7 +24,7 @@ export class AppComponent {
     }
 
     // This check is used to prevent timeout error when the observable is loading 
-     check = false;
+    check = false;
     addressData = []; 
     saving; 
     salesmen: Sale[]; 
@@ -44,16 +44,6 @@ export class AppComponent {
 
         }
         
-       // "COLLECAMT": 18972561
-        sampleDataw: any[] = [
-            { SALESAMT: 45, SALESMAN: 'Maaz', SAL_NAME_ID: '234', COLLECAMT: '22'},
-            { SALESAMT: 53, SALESMAN: 'Ali', SAL_NAME_ID: '33' },
-            { SALESAMT: 23, SALESMAN: 'Omer', SAL_NAME_ID: '32' }
-            
-        ];
-    
-
-
 
     padding: any = { left: 5, top: 5, right: 5, bottom: 5 };
 
@@ -73,11 +63,11 @@ export class AppComponent {
             seriesGapPercent: 0,
             valueAxis:
             {
-                unitInterval: 5000000,
+                unitInterval: 2500000,
                 minValue: 10000,
-                maxValue: 24000000,
+                maxValue: 23000000,
                 displayValueAxis: true,
-                description: 'Time in minutes',
+                description: 'Amount',
                 axisSize: 'auto',
                 tickMarksColor: '#888888'
             },
@@ -87,6 +77,5 @@ export class AppComponent {
             ]
         }
     ];
-
 
 }
